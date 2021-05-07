@@ -1,6 +1,7 @@
 <html>
     <head>
             <link href="https://fonts.googleapis.com/css?family=Quicksand|Sanchez" rel="stylesheet">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.2/css/bulma.min.css" integrity="sha512-byErQdWdTqREz6DLAA9pCnLbdoGGhXfU6gm1c8bkf7F51JVmUBlayGe2A31VpXWQP+eiJ3ilTAZHCR3vmMyybA==" crossorigin="anonymous" />
         <style>
             .header-font {
                 font-family: 'Sanchez', serif;
@@ -27,12 +28,16 @@
             .contact {
                 width: 340px;
                 margin: 0 auto;
-
+                display: flex;
+                flex-direction: column;
             }
 
             .item {
                 width: 100%;
                 height: 35px;
+                margin: 10px 0;
+                align-items: center;
+                justify-content: space-between;
             }
 
             .item img {
@@ -47,7 +52,7 @@
                 font-family: 'Quicksand', sans-serif;
             }
 
-            img {
+            .grayscale {
                 -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
                 filter: grayscale(100%);
             }
@@ -74,6 +79,18 @@
                 padding-left: 15px;
             }
 
+            italic {
+                text-decoration:line-through
+            }
+
+            span.button.is-rounded {
+                padding-top: 0px;
+                padding-bottom: 0px;
+                padding-left: 10px;
+                padding-right: 10px;
+                height: auto;
+            }
+
 
         </style>
     </head>
@@ -82,179 +99,169 @@
 
         <div class="header">
             
-            <img class="round-image" src="./vmvini.jpg">
-
+            <img class="round-image" src="./vmvini-colored.jpg">
+            <br><br>
             <h3 class="header-font">Marcus Vinicius de Vasconcelos Filho</h3>
-
+            <br>
             <div class="contact">
                 <div class="item">
-                    <img 
-                        style="margin-top: -6px;"
-                        src="https://user-images.githubusercontent.com/16657091/55263234-8b903300-522d-11e9-9926-44e4b3c17e0a.png" />
-                    <p>www.npmjs.com/~vmvini</p>
+                    <img
+                        src="github.svg" />
+                    <p>https://github.com/vmvini</p>
                 </div>
                 <div class="item">
-                    <img 
-                        style="width: 60px; margin-top: 5px;"
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLHpF85jNbcjKUu0KQgspL6ZZR0oXprYFXQwpVpE8Yy9S1idL2" />
+                    <img
+                        src="linkedin.svg" />
                     <p>www.linkedin.com/in/vmvini</p>
                 </div>
                 <div class="item">
                     <img 
-                        style="margin-top: -5px; margin-left: -6px;"
-                        src="data:image/png;base64,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"/>
+                        src="gmail.svg"/>
                     <p>vmvinidev@gmail.com</p>
                 </div>
                 <div class="item">
-                    <img 
-                        style="height: 30px; margin-left: -5px;"   
-                        src="https://www.kaikoura.govt.nz/themes/kaikoura/images/icons/icon-phone.svg" />
+                    <img  
+                        src="whatsapp.svg" />
                     <p>+351 913 553 750</p>
                 </div>
             </div>
-
+            <br>
             <div class="text-section">
                 <div class="title">
                     About me
                 </div>
 
                 <div class="content">
-                        4 year experienced software engineer passionate about web development and creating short libraries that helps developers across the world. <br> I worked for the companies (<strong>Integritas</strong> and <strong>RuppellsGriffon</strong>). Now Im working with <strong>Aubay Portugal</strong> as a software consultant. 
-
-                        <br>Although I have experience creating and maintaining node js servers, my focus is frontend development and I love to create lean reusable UI components, thats why Im excited to work with react and angular, because it presents us a very lean and flexible approach to create reusable components.
-                        
-                        <br>The most important thing about me: Im good in learning things by myself, whatever I need to learn to accomplish some project need.
+                        5 year experienced software engineer passionate about web development and creating short libraries and tools that helps developers and normal people around the world. 
+                        <br> I worked for the companies <span class="button is-info is-rounded">RuppellsGriffon</span>, <span class="button is-primary is-rounded">Integritas</span>, <span class="button is-warning is-rounded">Aubay</span>. 
+                        Now Im working with <span class="button is-link is-rounded">GoWithFlow</span> and I'm happy there, <italic>but... it is difficult for me to just ignore an opportunity for companies like MongoDB</italic>
+                        <br>
+                        <br> Working for those companies I mentioned above, I learnt how to maintain and give extra life to dead projects! The kind of <span class="button is-danger is-rounded">problems I faced</span> ( <span class="button is-warning is-rounded">high coupling</span>, <span class="button is-warning is-rounded">broken workflows</span>, <span class="button is-warning is-rounded">very complex state management</span>, <span class="button is-warning is-rounded">bad code design</span>, <span class="button is-warning is-rounded">"hard to track" issues</span>) made me a better software engineer.
+                        <br>
+                        <br> Also, I really enjoy developing <span class="button is-primary is-rounded">tools and libraries</span>. I always learn something new from my personal projects, and the feeling of developing something useful for other developers is insanely great.
+                        <br>
+                        <br> At the end of the page you'll see descriptions about each of my personal projects.
                 </div>
 
             </div>
 
-            <div class="text-section">
-                <div class="title">
-                    Formal Education
-                </div>
-
-                <div class="content">
-                    Graduated on System Analysis and Development by IFPB (Instituto Federal da Paraíba) 2013 - 2017
+            <br><br><br>
+            <section class="hero is-link" style="align-items: center;">
+                <div class="hero-body" style="max-width: 800px;">
+                  <p class="title">
+                    Formal Education (Brazil) (2013 - 2017)
+                  </p>
+                  <p style="text-align: left;">Graduated in <strong>System Analysis and Development</strong> from Federal Institute of Paraíba (Brazil) 
                     <br>Graduation Work: <strong>Pinch Notes</strong> - Text oriented mind map tool
                     <i>https://github.com/vmvini/vmvini.github.io/blob/master/graduation_work.pdf</i>
-                </div>
-            </div>
+                </p>
+            </section>
+
+
+            <section class="hero is-medium is-info" style="align-items: center;">
+                <div class="hero-body" style="max-width: 800px;">
+                  <p class="title">
+                    Ruppells Griffon (Australia) (2016) - Full Remote
+                  </p>
+                  <p style="text-align: left;">
+                    <br>I was hired by RuppellsGriffon to work as a <span class="button is-warning is-rounded">junior fullstack web developer</span>, but more focused in the frontend development with <span class="button is-warning is-rounded">angular js</span>. I was in the final steps of my graduation course (System Analysis and Development), when I received an email with the job announcement.
+
+                        <br><br>Their business model is all about giving their clients business insights from geospatial data. Their common projects involves gathering geospacial data, analyzing it, and expose it through applications.
+
+                        <br><br>There I learnt how to build bigger frontend applications, keep tracking production environment through logs,  study a variety of web technologies (<span class="button is-warning is-rounded">Mapbox gl js</span>, <span class="button is-warning is-rounded">Google APIs</span>, <span class="button is-warning is-rounded">GeoJSON</span>, <span class="button is-warning is-rounded">MongoDB</span>)
+
+                        <br><br>The project I was most excited to work on was one of their map applications on top of "Mapbox gl".  Although the frontend app was cool, I was mostly interested in the <span class="button is-warning is-rounded">background tools</span> I had to create to process raw geospatial data from different sources, so I had to organize that variety of data, extract points, geometries, convert them to GeoJSON. Also I had to build <span class="button is-warning is-rounded">crawlers</span> to gather data from different sites, including the site of the government of Australia. All of this, I did utilizing the javascript language, either on the browser, either on the server. 
+                  </p>
+            </section>
+
+            <section class="hero is-medium is-primary" style="align-items: center;">
+                <div class="hero-body" style="max-width: 800px;">
+                  <p class="title">
+                    Integritas (United States) (2018) - Full Remote
+                  </p>
+                 <p style="text-align: left;"> Two years after working on Ruppells projects, I decided to move on and face a new adventure , which was Integritas. From their site: (www.integritas.net) "Integritas is an established, international software product development company, responsible for creating web, mobile, enterprise and big data solutions since 2004."
+
+                    <br><br>At Integritas, my role was <span class="button is-warning is-rounded">frontend developer</span>, and I did work on 2 big projects. One of the projects I worked from scratch, let's call it project (H).
+                        
+                    <br><br>The project (H) consists of 3 projects, a <span class="button is-warning is-rounded">legacy website</span>, a new <span class="button is-warning is-rounded">hybrid mobile app</span> built with <span class="button is-warning is-rounded">Angular 2+</span>, a <span class="button is-warning is-rounded">node js server</span> built upon the <span class="button is-warning is-rounded">hapi framework</span>, and a <span class="button is-warning is-rounded">postgres database</span>.  I worked more on the mobile angular app, but offered support for the other 2 projects as well. 
+                        
+                    <br><br>The other project I mentioned to have worked on, let's call it as the project (S). I was allocated to work on this project after the project (H) MVP was done and successfully delivered. The team that worked on the project (S) was huge, at least 7 developers, and the project was almost a legacy one with lots of <span class="button is-warning is-rounded">technical debt</span>. (I think the guys from upstairs thought I could help to revive the almost dead project, and they were right). 
+                        
+                    <br><br>The project (ASS) (:D) was a huge management system with a lot of complex charts, tables, user interfaces, and its frontend was built using <span class="button is-warning is-rounded">Angular 2+.</span>
+                        
+                    <br><br>Due to the big team containing a variety of people from different cultures/countries, I learnt to communicate better with other devs and managers. Also, I had to practice the art of the code refactoring as our code base was pretty much fucked up.
+                </p>
+            </section>
+
+
+            <section class="hero is-medium is-warning" style="align-items: center;">
+                <div class="hero-body" style="max-width: 800px;">
+                  <p class="title">
+                    Aubay (Portugal) (2020)
+                  </p>
+                 <p style="text-align: left;">
+                    I was living in Brazil at the time Aubay contacted me. They proposed me a relocation to Portugal, to work as a <span class="button is-rounded">developer consultant</span>.
+
+                    <br><br>It was an incredible experience to move to a different country, and work on different clients and projects. Through Aubay clients, I've met the companies EdirectInsure, and GoWithFlow.
+
+                    <br><br>Through a lot of work made in this period, I learnt how to handle <span class="button is-rounded">bad designed microservices</span>, <span class="button is-rounded">spaghetti architecture</span>. So, now I'm vaccinated against the temptation to create <span class="button is-rounded">direct http relationships</span> between what were supposed to be microservices.
+                </p>
+            </section>
+
+            <section class="hero is-medium is-link" style="align-items: center;">
+                <div class="hero-body" style="max-width: 800px;">
+                  <p class="title">
+                    GoWithFlow (Portugal) (current)
+                  </p>
+                 <p style="text-align: left;">
+                    After some time as developer consultant allocated at GoWithFlow, they called me to work directly with them. I was hired as a <span class="button is-warning is-rounded">senior software engineer</span> to maintain, improve and scale a subset of their systems, specifically the frontend solutions, and guide junior and middle developers.
+
+<br><br>GoWithFlow, as described in their site (www.gowithflow.io) : "Formed officially as Flow in late 2019, when Portuguese energy giant Galp
+acquired a majority stake, the company today manages thousands of vehicles,
+EV charging stations and consumer end users across multiple software and
+services implementations in corporations and communities around the world."
+
+<br><br>At GoWithFlow, I learnt how to really work following a well designed development process, we follow <span class="button is-warning is-rounded">SCRUM</span> properly, we do <span class="button is-warning is-rounded">CI/CD</span> through gitlab, <span class="button is-warning is-rounded">unit and integration testing</span> as it is needed.
+
+<br><br>The most exciting solution I have worked on was to bring our big frontend into a <span class="button is-warning is-rounded">microfrontend architecture</span>. A lot of refactoring was done, a lot of coupling was removed, so that subsets of the system could be separated and placed per domain, and yet reuse same shared services. <span class="button is-warning is-rounded">Angular's dependency injection</span> system was the hero to achieve this, as different microservices needed different implementations of the same interface.
+                </p>
+            </section>
+
 
             <div class="text-section">
                 <div class="title">
-                    Digital Education: Udemy Courses
-                </div>
-                <div class="content">
-                    The Complete React Native + Hooks Course [2019 Edition]
-                    <br>The Complete React Web App Developer Course
-                    <br>Angular Front to Back 
-                    <br>The Complete Node.js Developer Course (3rd Edition)
-                    <br>Spring Framework 5: Beginner to Guru
-                    <br>Neo4j: GraphDB Foundations with Cypher
-                </div>
-            </div>
-
-            <div class="text-section">
-                <div class="title">
-                    Working at Ruppells Griffon (since 2016)
+                    Some of my own projects
                 </div>
 
                 <div class="content">
-                        Ruppells Griffon is a startup based in Sydney, Australia.
-                        <br>I was a fullstack web developer there and I did work with <strong>Angular js</strong>, <strong>Angular 2+</strong>, <strong>node js</strong>, <strong>mapbox</strong>, <strong>google maps apis</strong> and <strong>mongodb</strong>.
-                        <br>Aside from our internal projects at Ruppells, we have been developing the <strong>OpenCity</strong> Progressive Web App > <strong> https://www.opencity.global </strong>
-                </div>
-            </div>
-
-            <div class="text-section">
-                <div class="title">
-                    Working at Integritas (since 2017)
-                </div>
-                <div class="content">
-                        Integritas is a company based in Texas, US.
-                        <br>There I work at frontend using <strong>Angular 2+</strong> and <strong>React</strong>, until now I did work on 2 big projects: <strong>HippoHealth</strong> and a management webapp for <strong>Solomon</strong>.
-                        <br>I have been working with distributed teams across the world and we do follow the <strong>Scrum</strong> development process.
-                </div>
-            </div>
-
-            <div class="text-section">
-                <div class="title">
-                    Working at Truesoft (since 2018)
-                </div>
-
-                <div class="content">
-                    Truesoft is a software house company located in João Pessoa Brazil.
-                    <br>I was a fullstack web developer there and I did work with <strong>Angular js</strong>, <strong>Angular 2+</strong>, <strong>Java</strong>, <strong>Spring</strong> and <strong>Postgresql</strong>.
-                </div>
-            </div>
-
-            <div class="text-section">
-                <div class="title">
-                    Working at Aubay (since 2020)
-                </div>
-
-                <div class="content">
-                    Aubay brought me to Portugal for an amazing job experience. <br>
-                    As an outsourcing company, I have the opportunity to work with different clients and projects<br>
-                    Im currently allocated to <strong>GoWithFlow</strong> helping our <strong>Angular</strong> team do maintain and expand a big urban mobility app project.
-                    As we are close to meet the project milestones, Im excited to meet other clients and problems I can help solve. 
-                </div>
-            </div>
-
-            <div class="text-section">
-                <div class="title">
-                    Tech4covid19
-                </div>
-
-                <div class="content">
-                    Tech4covid19 is a big community here in Portugal trying to develop solutions to help people against covid-19.<br>
-                    With them I had the opportunity to contribute with some hours of code for two great projects: <br>
-                    <strong>Covidografia</strong> - https://covidografia.pt/
+                    <br><strong>Rest-to-soap-mapper</strong> - https://github.com/vmvini/rest-to-soap-mapper
                     <div class="p_details">
-                        <br>App that tracks the Portugal cases of covid19 with the help of users and its inputs.
-                    </div>
-                    <br><strong>TeamLoan</strong> - https://www.teamloan.pt/
-                    <div class="p_details">
-                        <br>App that aims to help Portugal companies to share professionals during this difficult time.
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-section">
-                <div class="title">
-                    My own projects
-                </div>
-
-                <div class="content">
-                    <strong>HarassmentComplaint</strong> - https://harassmentcomplaint.herokuapp.com
-                    <div class="p_details">
-                        <br> It is a collaborative map built during graduation
-                        <br> Its frontend application was built using google maps api and angular js.
-                        <br> The server exposes a Restful api built upon the Express framework for nodejs.
-                        <br> The data is saved and searched through mongo database.
-                        <br> The user can insert in the map points and add related information about the witnessed attack.
-                    </div>
-                    <br><strong>Rest-to-soap-mapper</strong> - https://www.npmjs.com/package/rest-to-soap-mapper
-                    <div class="p_details">
+                        <br> <strong>Included in 2020 GitHub Archive Program</strong>
                         <br> Npm module that creates a bridge between existing soap web services and node-express rest apis
-                        <br> I've built this module to help to expose existing SOAP services through REST apis.
+                        <br> I've built this module to help to expose existing <span class="button is-warning is-rounded">SOAP</span> services through <span class="button is-warning is-rounded">REST</span> apis.
                         <br> This library is built upon javascript and it is available for node js only.
                     </div>
-                    <br><strong>Venqueuer</strong> - https://www.npmjs.com/package/venqueuer
+                    <br><strong>Venqueuer</strong> - https://github.com/vmvini/venqueuer
                     <div class="p_details">
+                        <br> <strong>Even though we can achieve the same behavior through reducers and promises or callbacks, I like to remember this short library. I created it as a way of studying javascript.</strong>
                         <br>An javascript asynchronous code enqueuer. 
-                        <br>Perfect for queue up repetitive i/o tasks that should be executed in order, in a way that the end of one task calls the next in the queue, all this asynchronously, of course. 
-                        <br>You just need to register the function which you want queue up and call vEnqueuer's methods like enqueue or trigger.
-                        <br>I built this library only for research purposes, although it is working pretty good, it should not be used in production apps.
+                        <br>Useful for queue up repetitive tasks that should be executed in order, in a way that the end of one task calls the next in the queue.
                     </div>
-                    <br><strong>node-twitter-signin</strong> - https://www.npmjs.com/package/node-twitter-signin
+                    <br><strong>node-twitter-signin</strong> - https://github.com/vmvini/node-twitter-signin
                     <div class="p_details">
-                        <br>sets twitter oauth authentication on your node js express server specifically to handle the usage by a single page application
+                        <br>sets twitter <span class="button is-warning is-rounded">oauth authentication</span> on your node js express server specifically to handle the usage by a single page application
                     </div>
-                    <br><strong>Beerlist</strong> - https://github.com/vmvini/beerlist
+                    <br><strong>ytComment</strong> - https://www.ytcomment.com/
                     <div class="p_details">
-                        <br>A react web app that lists and show details of beers.
-                        <br>It is built using React Routes, Redux, Axios library to handle http requests, and styled-components;
+                        <br> This is a simple tool I created to help youtube addicteds like me to find specific comments in a specific video.
+                        <br> As I like to keep things simple, the frontend it is rendered by the server using the <span class="button is-warning is-rounded">template render pug js</span>.
+                        <br> The brain of this app is the <span class="button is-warning is-rounded">node js express server</span> which uses <span class="button is-warning is-rounded">youtube apis</span> to retrieve all the comments of a given video, and make a filtering by the search terms.
+                    </div>
+
+                    <br><strong>Other projects</strong>
+                    <div class="p_details">
+                        <br>I have been working also on <span class="button is-warning is-rounded">Google Chrome extensions</span>. I like the idea of creating a tool to complement some website experience. For instance, I have a private project called <strong>rancher-diff-stages-envs</strong>. It is a chrome extension that helps developers see the difference between multiple <span class="button is-warning is-rounded">Rancher</span> environments.
+                        <br><br> rancher-diff-stages-envs was built using <span class="button is-warning is-rounded">React</span>, <span class="button is-warning is-rounded">Redux</span> and <span class="button is-warning is-rounded">Chrome Extension API</span>. The redux was used as a way to syncronize all the state between the extension popup, the background script, and the app page.
                     </div>
                 </div>
             </div>
